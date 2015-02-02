@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-02-2015 a las 22:34:59
--- Versión del servidor: 5.5.23
+-- Tiempo de generación: 02-02-2015 a las 17:08:16
+-- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -141,6 +141,7 @@ INSERT INTO `log` (`id_log`, `id_usuario`, `entrada`, `salida`, `fecha`) VALUES
 ('8489559d58d95cb873497e79b4cc326f', 'roli_00', '03:09:54', '04:25:37', '2015-01-29'),
 ('85ea278acb2dd7cfbed4ffc8f52a7f7a', 'roli_00', '04:04:35', '04:04:55', '2015-01-31'),
 ('8897bf1c1a73a3a2abda10ab7a00bfdf', 'roli_00', '05:13:15', NULL, '2015-01-25'),
+('8b69d23751510b748154138e25d7c989', 'rolando55admin18894933', '15:48:10', NULL, '2015-02-02'),
 ('8cc324d93344b4427886da8535b0542a', 'roli_00', '04:45:59', '04:56:35', '2015-01-29'),
 ('8f417bd039f841789ca296cdf20a4075', 'roli_00', '04:18:53', NULL, '2015-01-31'),
 ('910e3da05c314ca052556066f0ecfc92', 'roli_00', '04:17:23', '04:18:51', '2015-01-31'),
@@ -195,14 +196,15 @@ CREATE TABLE IF NOT EXISTS `login` (
   `rol` varchar(45) NOT NULL,
   `fecha` date DEFAULT NULL,
   PRIMARY KEY (`id_login`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla de logueo lieison , esta tabla genera los permisos necesarios	' AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla de logueo lieison , esta tabla genera los permisos necesarios	' AUTO_INCREMENT=11 ;
 
 --
 -- Volcado de datos para la tabla `login`
 --
 
 INSERT INTO `login` (`id_login`, `id_usuario`, `user`, `password`, `activo`, `rol`, `fecha`) VALUES
-(6, 'rolando55admin18894933', 'rolando', 'fko1YTkxxGGYh6xET/Cw0HrEqEtYM/BiIfqNmgUaHxQ=', 1, 'admin', NULL);
+(6, 'rolando55admin18894933', 'rolando', 'fko1YTkxxGGYh6xET/Cw0HrEqEtYM/BiIfqNmgUaHxQ=', 1, 'admin', NULL),
+(10, 'geabenitez2admin13216571', 'geabenitez', '0kI93Zv68xbREvZRS71FZwAaXKjcmAPZHXkWyMrfDSc=', 1, 'admin', '2015-02-02');
 
 -- --------------------------------------------------------
 
@@ -273,6 +275,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `dui`, `nit`, `email`, `imagen`) VALUES
+('geabenitez2admin13216571', 'Gerson E.', 'Aguirre', NULL, NULL, 'geabenitez@lieison.com', NULL),
 ('rolando55admin18894933', 'Rolando Antonio', 'Arriaza Marroquin', NULL, NULL, 'rmaorroquin@lieison.com', NULL);
 
 -- --------------------------------------------------------
@@ -294,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `visitas` (
 --
 
 INSERT INTO `visitas` (`id_visitas`, `numero`, `mes`, `anio`) VALUES
-(2, 201, 2, 2015),
+(2, 202, 2, 2015),
 (3, 50, 3, 2015),
 (4, 110, 1, 2015);
 
