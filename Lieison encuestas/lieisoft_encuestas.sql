@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2015 at 09:30 PM
+-- Generation Time: Mar 04, 2015 at 07:48 PM
 -- Server version: 5.5.23
 -- PHP Version: 5.5.12
 
@@ -35,6 +35,23 @@ CREATE TABLE IF NOT EXISTS `empresa` (
   `fecha` date DEFAULT NULL,
   `titulo` text,
   PRIMARY KEY (`id_empresa`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `encuestados`
+--
+
+CREATE TABLE IF NOT EXISTS `encuestados` (
+  `id_encuestados` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo_cuenta` text NOT NULL,
+  `nombre` text NOT NULL,
+  `email` text NOT NULL,
+  `alias` text NOT NULL,
+  `pais` text NOT NULL,
+  `social_id` text NOT NULL,
+  PRIMARY KEY (`id_encuestados`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -81,13 +98,25 @@ CREATE TABLE IF NOT EXISTS `opciones` (
 --
 
 INSERT INTO `opciones` (`id`, `id_encuesta`, `nombre`, `valor`) VALUES
-(1, 1, 'Muy Bueno', 14),
+(1, 1, 'Muy Bueno', 15),
 (2, 1, 'Bueno', 6),
 (3, 1, 'Malo', 3),
 (4, 4, 'bien', 1),
 (5, 4, 'mal', 0),
 (6, 5, 'USA', 8),
 (7, 5, 'Hitler', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `terminada`
+--
+
+CREATE TABLE IF NOT EXISTS `terminada` (
+  `id_encuesta` int(11) NOT NULL,
+  `id_encuestados` int(11) NOT NULL,
+  `fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
