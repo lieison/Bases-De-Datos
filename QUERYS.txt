@@ -1,0 +1,9 @@
+ SELECT
+ clientes.fechaInicio as 'fecha',
+ concat(clientes.nombre , ' ' , clientes.Apellido) as 'nombres',
+ telefono.numero_casa as 'telefono casa ' ,
+ email.email as 'E-mail' 
+ FROM clientes
+ LEFT JOIN telefono ON clientes.idtelefono=telefono.idtelefono
+ LEFT JOIN email ON clientes.idemail = email.idemail
+ WHERE telefono.numero_casa NOT LIKE '' AND email.email NOT LIKE '' ;
